@@ -1,28 +1,20 @@
 #include <iostream>
 
-// factorial function
-int factorial(int num)
+// trailing zeros function
+int trailing_zeros(int n)
 {
-    int ans = 1;
-    for (int i = 1; i <= num; i++)
-        ans = ans * i;
-    return ans;
-}
-// function trailing zeros
-int trailing_zeros(int num)
-{
-    int fact = factorial(num);
-    int rem, count = 0;
-    rem = num % 10;
-    while (num && rem != 0)
+    int count = 0;
+    while (n >= 5)
     {
-        rem = num % 10;
-        num = num / 10;
-        count++;
+        n /= 5;
+        count += n;
     }
     return count;
 }
 int main()
 {
-    std::cout <<  trailing_zeros(6) << std::endl;
+    int num;
+    std::cout << "enter the number: ";
+    std::cin >> num;
+    std::cout << trailing_zeros(num) << std::endl;
 }
