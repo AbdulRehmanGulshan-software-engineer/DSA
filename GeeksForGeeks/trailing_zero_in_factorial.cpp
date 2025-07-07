@@ -1,3 +1,4 @@
+// problem : For an integer n, find the number of trailing zeroes in n!.
 #include <iostream>
 
 // trailing zeros function
