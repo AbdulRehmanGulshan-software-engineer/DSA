@@ -14,3 +14,6 @@ int main()
         i--;
     std::cout << i << std::endl;
 };
+
+
+//see another code using binary search algorithm on leetcode
