@@ -141,4 +141,55 @@ int main()
     // find index
     cout << endl;
     cout << "index of 3 : " << find(arr.begin(), arr.end(), 3) - arr.begin() << endl;
+
+    // testing new operartions on new vector
+    vector<int> gulshan;
+    gulshan.push_back(7);
+    gulshan.push_back(2);
+    gulshan.push_back(5);
+    gulshan.push_back(1);
+    gulshan.push_back(9);
+    gulshan.push_back(0);
+    gulshan.push_back(5);
+    gulshan.push_back(2);
+
+    // sort increasing
+    sort(gulshan.begin(), gulshan.end());
+    // print
+    cout << endl;
+    for (auto i : gulshan)
+        cout << i << " ";
+
+    // sort decreasing
+    // sort(gulshan.begin(), gulshan.end(), greater<int>());
+    // print
+    cout << endl;
+    for (auto i : gulshan)
+        cout << i << " ";
+
+    // count
+    cout << endl;
+    int amount = count(gulshan.begin(), gulshan.end(), 2);
+    cout << "2 is present : " << amount << " times" << endl;
+
+    // Max or Min
+    int maximium = *max_element(gulshan.begin(), gulshan.end());
+    cout << "maximum element is : " << maximium << endl;
+    int minimum = *min_element(gulshan.begin(), gulshan.end());
+    cout << "minimum element is : " << minimum << endl;
+
+    // lower bound
+    cout << "upper bound of 2 is : " << *upper_bound(gulshan.begin(), gulshan.end(), 2) << endl;
+
+    // lower bound
+    cout << "lower bound of 2 is : " << *lower_bound(gulshan.begin(), gulshan.end(), 2) << endl;
+
+    // search
+    cout << binary_search(gulshan.begin(), gulshan.end(), 5) << endl;
+
+    int it = *find(gulshan.begin(), gulshan.end(), 2); // first occurance
+    cout << it << endl;
+
+    auto ite = find(gulshan.begin(), gulshan.end(), 2); // first occurance
+    cout << *ite << endl;
 }
