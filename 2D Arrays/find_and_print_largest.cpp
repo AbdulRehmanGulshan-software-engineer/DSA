@@ -1,7 +1,5 @@
-#include <iostream>
-#include <algorithm>
-#include <climits>
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> //non-standard header file used in competitive programming
+
 using namespace std;
 
 // main function
