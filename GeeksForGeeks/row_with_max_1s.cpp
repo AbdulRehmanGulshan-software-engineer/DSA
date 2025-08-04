@@ -1,5 +1,5 @@
 // problem : Row with max 1s
-// time complexity is O(n + m),where n means rows and m means columns
+// time complexity is O(n * m),where n means rows and m means columns
 #include <bits/stdc++.h>
 
 // max 1's in row function
@@ -69,3 +69,18 @@ int main()
     std::cout << "row index with max 1's : " << rowWithMax1s(matrix);
     return 0;
 };
+
+
+// // O(n + m) top_right approach
+//         int i = 0,j = cols-1,index = -1;
+//         while(i < rows && j >=0)
+//         {
+//             if(arr[i][j]==1)
+//             {
+//                 index = i;
+//                 j--;
+//             }
+//             else
+//                 i++;
+//         }
+//         return index;
