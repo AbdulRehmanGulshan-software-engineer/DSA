@@ -3,7 +3,7 @@
 // code here
 #include <iostream>
 #include <climits> //library file for using INT_MAX
-// functtion for palindrome
+// function for palindrome
 bool is_pallindrome(int x)
 {
     if (x < 0) // return false if negative
