@@ -1,10 +1,6 @@
 /*
-Read a PGM file and create a vertically flipped image (top-to-bottom).
-*/
-
-/*
- Read a PGM file and increase brightness by adding 128 to every pixel value (clamped at
-255). Write the modified image to a new file.
+Read a PGM file and write its transpose into another file. Verify the result.
+180 rotation
 */
 
 #include <iostream>
@@ -31,20 +27,18 @@ int main()
     }
     gulshan.close();
 
-    // rotating mechanism
-    int s_height = 0, e_height = height-1;
-    while (s_height < e_height)
+    int rotate_180[height][width];
+    for (int i = 0; i < height; i++)
     {
-        for (int i = 0; i < width; i++)
+        for (int j = 0; j < width; j++)
         {
-            swap(pixels[s_height][i], pixels[e_height][i]);
+            rotate_180[height - 1 - i][width - 1 - j] = pixels[i][j];
         }
-        s_height++;
-        e_height--;
     }
+    // transpose
 
     // writing file
-    ofstream zoha("question_03_med.pgm");
+    ofstream zoha("question_06_med.pgm");
     zoha << "P2\n";
     zoha << "# Made By Abdul Rehman Gulshan.\n";
     zoha << width << " " << height << "\n";
@@ -52,7 +46,7 @@ int main()
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
-            zoha << pixels[i][j] << " ";
+            zoha << rotate_180[i][j] << " ";
         zoha << "\n";
     }
     zoha.close();
