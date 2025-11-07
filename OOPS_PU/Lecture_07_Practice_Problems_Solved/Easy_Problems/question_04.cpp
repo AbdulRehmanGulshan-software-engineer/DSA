@@ -29,6 +29,8 @@ int main()
     ifstream abdul("hello.bin", ios::binary);
     abdul.read((char *)&len2, sizeof(len2));
     char str[len2];
+    // abdul.read(str, len2);
+    // cout << str << endl;
     abdul.close();
 
     // printing it
