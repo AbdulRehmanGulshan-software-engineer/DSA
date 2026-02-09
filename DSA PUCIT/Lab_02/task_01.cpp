@@ -4,11 +4,11 @@ using namespace std;
 template <typename T>
 class myVector
 {
+public:
     // data members
     T *data;
     int size, capacity;
 
-public:
     void reallocate(int newCap)
     {
         T *temp = new T[newCap];
@@ -170,30 +170,36 @@ public:
         delete[] data;
     }
 };
+
+// creating function for task 01
+void productExceptSelf(myVector<int> nums, int n, myVector<int> answer)
+{
+    for (int i = 0; i < n; i++)
+    {
+        answer.data[i] = 1;
+        for (int j = 0; j < n; j++)
+        {
+            if (j == i)
+                continue;
+            answer.data[i] = answer.data[i] * nums.data[j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+        cout << answer.data[i] << " ";
+    cout << endl;
+}
+
 int main()
 {
-    myVector<int> v;
-    v.push_back(10);
-    v.push_back(20);
-    v.push_back(30);
-    v.display();
-
-    v.insert(0, 99);
-    v.display();
-
-    v.erase(2);
-    v.display();
-
-    v.insert(0, 99);
-    v.display();
-
-    v.insert(0, 99); // capacity will double here
-    v.display();
-
-    cout << "\nsize: " << v._size();
-    cout << "\ncapacity: " << v._capacity();
-    cout << "\nFront: " << v.front();
-    cout << "\nBack: " << v.back();
-
+    int size;
+    cout << "Enter The size of array : ";
+    cin >> size;
+    cout << "Enter " << size << " Elements : ";
+    myVector<int> nums(size);
+    for (int i = 0; i < size; i++)
+        cin >> nums.data[i];
+    myVector<int> answer(size);
+    productExceptSelf(nums, size, answer);
+    answer.display();
     return 0;
 }
