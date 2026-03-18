@@ -1,0 +1,2 @@
+[Lecture Link](https://youtu.be/2Ekun-ocGnQ?si=aIAM513mpUenob5n)
+Time Complexity and space complexity in Recursion is totally theoretical lecture,need more and more practice questions to solve and learn from them.
