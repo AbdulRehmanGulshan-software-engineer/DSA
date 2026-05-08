@@ -96,6 +96,6 @@ int main()
     {
         cout << trav->data << " ";
         trav = trav->next;
-    }
+    }   
     return 0;
 }
